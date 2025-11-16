@@ -8,7 +8,7 @@
 int main()
 {
     try {
-        Bureaucrat boss("Boss", 1);
+        Bureaucrat boss("Boss", 160);
 
         PresidentialPardonForm pardon("Alice");
         RobotomyRequestForm robot("Bob");

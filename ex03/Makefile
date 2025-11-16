@@ -1,8 +1,10 @@
 NAME =  program
-SOURCES = Bureaucrat.cpp  main.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
+SOURCES = Bureaucrat.cpp  main.cpp AForm.cpp ShrubberyCreationForm.cpp \
+PresidentialPardonForm.cpp RobotomyRequestForm.cpp Intern.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ = $(SOURCES:.cpp=.o)
-HEADER = Bureaucrat.hpp  AForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp
+HEADER = Bureaucrat.hpp  AForm.hpp ShrubberyCreationForm.hpp \
+PresidentialPardonForm.hpp RobotomyRequestForm.hpp Intern.hpp
 %.o: %.cpp $(HEADER)
 	c++ $(FLAGS) -c $< -o $@
 
