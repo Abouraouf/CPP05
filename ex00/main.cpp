@@ -2,25 +2,19 @@
 
 int main()
 {
-    Bureaucrat mahdi;  
-
-    std::cout << mahdi << "\n";
-
     try {
-        mahdi.upgrade();
-        std::cout << mahdi << "\n";
-    }
-    catch (const Bureaucrat::GradeTooHighException& e) {
-        std::cout << "Cannot upgrade: " << e.what() << "\n";
-    }
+		Bureaucrat mahdi("mahdi", 1);
+		mahdi.upgrade();
+		mahdi.upgrade();
+		std::cout << mahdi << std::endl;
+		mahdi.downgrade();
+		std::cout << mahdi <<std::endl;
+	}
 
-    try {
-        mahdi.downgrade();
-        std::cout << mahdi << "\n";
-    }
-    catch (const Bureaucrat::GradeTooLowException& e) {
-        std::cout << "Cannot downgrade: " << e.what() << "\n";
-    }
+	catch(std::exception& exe)
+	{
+		std::cerr << "there is an error " << exe.what() << std::endl;
+	}
 
     std::cout << "Done.\n";
     return 0;
