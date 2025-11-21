@@ -25,7 +25,6 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 void RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
 	(void) executor;
-	srand(time(0));
 	int random = rand() % 2;
 
 	if (random == 1)

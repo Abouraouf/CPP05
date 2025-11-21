@@ -7,8 +7,9 @@
 
 int main()
 {
+	srand(time(0));
     try {
-        Bureaucrat boss("Boss", 160);
+        Bureaucrat boss("Boss", 1);
 
         PresidentialPardonForm pardon("Alice");
         RobotomyRequestForm robot("Bob");
