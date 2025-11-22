@@ -16,9 +16,12 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& oth
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
 {
-	_target = other._target;
-	setIsSigned(other.getIsSigned());
-	return (*this);
+	if (this != &other)
+	{
+		_target = other._target;
+		setIsSigned(other.getIsSigned());
+	}
+		return (*this);
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const& executor) const

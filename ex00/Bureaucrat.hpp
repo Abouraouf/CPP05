@@ -14,7 +14,7 @@ class Bureaucrat
 		Bureaucrat& operator=(const Bureaucrat &other);
 
 		const std::string& getName() const;
-		int getGrade();
+		int getGrade() const;
 		
 		void upgrade();
 		void downgrade();
@@ -35,5 +35,7 @@ class Bureaucrat
 					return "Bureaucrat grade too high!";
 				}
 		};
-		friend std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
+	

@@ -1,7 +1,5 @@
 #pragma once
  
-// continu the messages
-
 #include <iostream>
 #include <string>
 
@@ -39,5 +37,6 @@ public:
     	const char* what() const throw();
     };
 
-    friend std::ostream& operator<<(std::ostream& os, const Form& f);
 };
+
+std::ostream& operator<<(std::ostream& os, const Form& f);

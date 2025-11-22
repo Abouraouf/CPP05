@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-class Form;  // forward declaration
+class Form;
 
 class Bureaucrat
 {
@@ -36,5 +36,6 @@ public:
         const char* what() const throw();
     };
 
-    friend std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

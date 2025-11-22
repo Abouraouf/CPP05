@@ -17,8 +17,11 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AFo
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
 {
-	_target = other._target;
-	setIsSigned(other.getIsSigned());
+	if (this != &other)
+	{
+		_target = other._target;
+		setIsSigned(other.getIsSigned());
+	}
 	return (*this);
 }
 

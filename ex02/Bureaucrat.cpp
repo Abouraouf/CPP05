@@ -35,14 +35,14 @@ int Bureaucrat::getGrade() const {
 
 void Bureaucrat::incrementGrade()
 {
-    if (_grade <= 1)
+    if (_grade == 1)
         throw GradeTooHighException();
     _grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
-    if (_grade >= 150)
+    if (_grade == 150)
         throw GradeTooLowException();
     _grade++;
 }
@@ -82,7 +82,7 @@ void    Bureaucrat::executeForm(AForm const & form)
     }
     catch(const std::exception& e)
     {
-        std::cout << this->getName() << " cannot execute " << form.getName()
+        std::cerr << this->getName() << " cannot execute " << form.getName()
                   << " because " << e.what() << std::endl;
     }   
 }

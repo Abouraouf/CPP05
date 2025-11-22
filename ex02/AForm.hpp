@@ -1,10 +1,8 @@
 #pragma once
- 
-// continu the messages
 
 #include <iostream>
 #include <string>
- // 
+
 class Bureaucrat;
 
 class AForm
@@ -39,5 +37,6 @@ public:
     	const char* what() const throw();
     };
 
-    friend std::ostream& operator<<(std::ostream& os, const AForm& f);
 };
+
+std::ostream& operator<<(std::ostream& os, const AForm& f);

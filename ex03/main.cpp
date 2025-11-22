@@ -1,15 +1,19 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include <iostream>
 
 int main()
 {
     try {
+        Intern intern;
+        AForm *form = intern.makeForm("", "mahdi");
+        if (form)
+            std::cout << *form << std::endl;
+        delete form;
         Bureaucrat boss("Boss", 1);
-
         PresidentialPardonForm pardon("Alice");
         RobotomyRequestForm robot("Bob");
         ShrubberyCreationForm shrub("garden");
@@ -23,7 +27,9 @@ int main()
         boss.executeForm(shrub);
     }
     catch (std::exception& e) {
-        std::cout << "Error: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
     }
+
+
     return 0;
 }

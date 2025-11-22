@@ -3,11 +3,9 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include <iostream>
 
 int main()
 {
-	srand(time(0));
     try {
         Bureaucrat boss("Boss", 1);
 
@@ -24,7 +22,7 @@ int main()
         boss.executeForm(shrub);
     }
     catch (std::exception& e) {
-        std::cout << "Error: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
     }
     return 0;
 }

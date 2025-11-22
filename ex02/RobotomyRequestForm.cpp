@@ -17,14 +17,18 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AFo
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
 {
-	_target = other._target;
-	setIsSigned(other.getIsSigned());
-	return (*this);
+	if (this != &other)
+	{
+		_target = other._target;
+		setIsSigned(other.getIsSigned());
+	}
+		return (*this);
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
 	(void) executor;
+	srand(time(0));
 	int random = rand() % 2;
 
 	if (random == 1)
